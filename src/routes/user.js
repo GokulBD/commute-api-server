@@ -6,6 +6,8 @@ const userSchema = mongoose.Schema({
   password: String
 });
 const User = mongoose.model("User", userSchema);
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 router.post("/signup", async (req, res, next) => {
   try {
